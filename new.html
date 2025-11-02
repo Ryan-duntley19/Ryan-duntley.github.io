@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Duntley — Mechanical Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* Reset and Global Styles */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+    font-family:'Times New Roman', Times, serif; 
+    line-height:1.6; 
+    background:#eef1f5; /* Lighter background */
+    color:#222; 
+    scroll-behavior: smooth;
+    font-weight: 500; /* General text is slightly bolder */
+}
+a {text-decoration:none; color:inherit;}
+img {max-width:100%; display:block;}
+
+/* Color Palette */
+:root {
+    --primary-dark: #1c1c1c;
+    --primary-accent: #00a8a8; /* Teal/Cyan */
+    --light-gray: #f9f9f9;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100%;
+    background:var(--primary-dark);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:2rem 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+#sidebar img {border-radius:50%; width:120px; margin-bottom:1rem; border: 3px solid var(--primary-accent);}
+#sidebar h1 {font-size:1.8rem; margin-bottom:0.3rem;}
+#sidebar p {font-size:0.9rem; text-align:center; margin-bottom:2rem; color:#aaa;}
+#sidebar nav ul {list-style:none; width:100%;}
+#sidebar nav ul li {margin:0.5rem 0;}
+#sidebar nav ul li a {
+    color:#fff; 
+    display:flex;
+    align-items:center;
+    padding:0.75rem 1rem; 
+    border-radius:5px; 
+    transition:0.3s;
+    font-weight: 700; /* Bold nav text */
+}
+#sidebar nav ul li a i {margin-right: 0.75rem;}
+#sidebar nav ul li a:hover, #sidebar nav ul li a.active {background:#333; color:var(--primary-accent);}
+#sidebar .social {margin-top:auto; padding-bottom: 1rem;}
+#sidebar .social a {
+    color:#fff; 
+    font-size:1.1rem; /* Adjusted for tighter fit */
+    margin:0 0.5rem;   /* Adjusted for tighter fit */
+    transition:0.3s;
+}
+#sidebar .social a:hover {color:var(--primary-accent);}
+
+/* Main */
+#main {
+    margin-left:250px; 
+    padding:2rem; 
+    max-width:900px;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+section {margin-bottom:3.5rem;}
+h2,h3,h4 {margin-bottom:1rem; color:#111; border-bottom: 2px solid var(--primary-accent); padding-bottom: 0.5rem; font-weight: 700;} /* Bold headings */
+p {margin-bottom:1rem; color:#333;}
+
+/* Hero */
+.hero {
+    position: relative;
+    height:350px; /* Taller hero */
+    background: url('images/banner.jpg') center/cover no-repeat;
+    border-radius:10px;
+    margin-bottom:2rem;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5); /* Less dark overlay */
+    z-index:1;
+}
+.hero-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    padding: 2rem; /* Larger padding */
+    width: 100%;
+    z-index:2;
+    background: rgba(0,0,0,0.7); /* Dark semi-transparent band for text readability */
+}
+
+/* Fix text readability issues */
+.hero-text h2, .hero-text p {
+    color: #fff !important; 
+    border-bottom: none;
+}
+
+.hero-text h2 {font-size:2.2rem; margin-bottom:0.5rem;}
+.hero-text p {font-size:1.1rem; margin-bottom: 0;}
+
+/* Feature cards */
+.cards {display:flex; flex-wrap:wrap; gap:1.5rem;}
+.card {
+    background:var(--light-gray); 
+    padding:1.5rem; 
+    border-radius:8px; 
+    flex:1 1 280px; 
+    box-shadow:0 4px 10px rgba(0,0,0,0.05); 
+    transition:all 0.3s;
+    border-left: 5px solid var(--primary-accent);
+}
+.card:hover {transform: translateY(-5px); box-shadow:0 8px 15px rgba(0,0,0,0.1);}
+.card i {font-size:1.8rem; color:var(--primary-accent); margin-bottom:0.5rem; display:block;}
+.card strong {color: var(--primary-dark); font-weight: 700;} /* Bold card titles */
+
+/* Project Card List styling */
+.card ul {list-style: none; padding-left: 0;}
+.card ul li {font-size: 0.9rem; margin-bottom: 0.3rem; position: relative; padding-left: 15px;}
+.card ul li::before {
+    content: "•";
+    color: var(--primary-accent);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Timeline */
+.timeline {border-left:3px solid var(--primary-accent); margin-left:1rem; padding-left:1.5rem;}
+.timeline-item {margin-bottom:2rem; position: relative;}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-accent);
+    border-radius: 50%;
+}
+.timeline-item h4 {margin-bottom:0.3rem; border-bottom: none; padding-bottom: 0; color: var(--primary-dark); font-weight: 700;} /* Bold timeline titles */
+.timeline-item p {font-size:0.9rem; color:#555;}
+.timeline-item ul {list-style: disc; margin-left: 1.5rem; color:#555;}
+.timeline-item ul li {font-size: 0.9rem;}
+
+/* Contact form */
+form {display:flex; flex-direction:column; gap:1rem; background: var(--light-gray); padding: 2rem; border-radius: 8px;}
+input, textarea {padding:0.8rem; border-radius:5px; border:1px solid #ccc; width:100%;}
+input:focus, textarea:focus {border-color:var(--primary-accent); outline:none;}
+button {padding:0.8rem; border:none; border-radius:5px; background:var(--primary-accent); color:#fff; cursor:pointer; transition:0.3s; font-weight: bold;}
+button:hover {background:#008c8c;}
+
+/* Footer */
+footer {text-align:center; padding:2rem 0; color:#777; font-size:0.8rem; margin-top: 2rem;}
+
+/* Responsive */
+@media(max-width:768px){
+    #sidebar {position:relative; width:100%; height:auto; flex-direction:row; justify-content:space-between; flex-wrap:wrap; padding:1rem;}
+    #sidebar nav ul {display:flex; gap:1rem; flex-wrap: wrap; justify-content: center;}
+    #sidebar nav ul li a {padding: 0.5rem;}
+    #sidebar img, #sidebar h1, #sidebar p {margin: 0.5rem;}
+    #sidebar .social {padding-bottom: 0;}
+    #main {margin-left:0; padding:1rem;}
+    .cards .card {flex: 1 1 100%;} /* Stack cards on mobile */
+    .hero {height: 250px;}
+    .hero-text h2 {font-size: 1.8rem;}
+}
+
+/* Active section highlighting */
+nav ul li a.active {background:#333; color:var(--primary-accent);}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("main section");
+    const navLinks = document.querySelectorAll("#sidebar nav ul li a");
+    
+    // Function to add icons to nav links
+    const navIconMap = {
+        "about-me": "fas fa-user-circle",
+        "portfolio-intro": "fas fa-globe", // Icon for portfolio intro
+        "skills": "fas fa-flask",
+        "experience": "fas fa-briefcase",
+        "contact": "fas fa-paper-plane"
+    };
+
+    navLinks.forEach(link => {
+        const id = link.getAttribute('href').substring(1);
+        const iconClass = navIconMap[id];
+        if (iconClass) {
+            link.insertAdjacentHTML('afterbegin', `<i class="${iconClass}"></i>`);
+        }
+    });
+
+    // Scroll highlighting logic
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            // Adjust offset for better scroll experience
+            const sectionTop = section.offsetTop - 100; 
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+        navLinks.forEach(a => {
+            a.classList.remove("active");
+            if (a.getAttribute("href") === "#" + current) {
+                a.classList.add("active");
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<aside id="sidebar">
+    <img src="images/avatar.jpg" alt="Ryan Duntley">
+    <h1>Ryan Duntley</h1>
+    <p>Mechanical Engineering Student & Mechanical Design</p>
+    <nav>
+        <ul>
+            <li><a href="#about-me" class="active">About</a></li>
+            <li><a href="#portfolio-intro">Portfolio</a></li>
+            <li><a href="#skills">Skills & Projects</a></li>
+            <li><a href="#experience">Experience & Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="social">
+        <a href="https://github.com/dhdvxvbb" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/ryan.dunt0618" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/ryanduntley3?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/ryanduntleyprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ryanduntley7@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+</aside>
+
+<main id="main">
+    <section id="about-me">
+        <div class="hero">
+            <div class="hero-text">
+                <h2>Hi, I'm Ryan</h2>
+                <p>Mechanical Engineering student at UTA specializing in automotive systems and design.</p>
+            </div>
+        </div>
+        <h4>Professional Summary</h4>
+        <p>Grew up in **Frisco, Texas**, and graduated from Frisco Centennial High School. Through ownership and performing work on my car, I have acquired **hands-on experience with BMW engines (N54 and Gen 1 B58)**, including component design and complete rebuilds. I am actively involved in **Formula SAE UTA** and **AIAA** at UTA, applying theoretical knowledge to real-world mechanical challenges.</p>
+    </section>
+
+    <section id="portfolio-intro">
+        <h3>Engineering Portfolio & Works</h3>
+        <p>This section outlines a collection of my works developed through the **PLTW (Project Lead The Way) pathway** in Frisco, Texas, supplemented by my current trajectory as a mechanical engineering student at **The University of Texas at Arlington (UTA)**. My projects showcase my progress from foundational design concepts to hands-on mechanical applications.</p>
+        <p>View my complete portfolio here: <a href="https://sites.google.com/view/engineering-portofiolo125846/home" target="_blank">**Google Sites Portfolio** <i class="fas fa-globe"></i></a></p>
+    </section>
+
+    <section id="skills">
+        <h3>Skills & Projects</h3>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <strong>Core Technical Skills</strong>
+                <ul>
+                    <li>*CAD Modeling:* SolidWorks, Fusion 360</li>
+                    <li>*Mechanical Fabrication* & Assembly</li>
+                    <li>Engine Systems Diagnostics</li>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fas fa-car-side"></i>
+                <strong>Gen 1 B58 Engine Rebuild</strong>
+                <p>Disassembled and rebuilt the B58 engine on my BMW M240i. This project involved component inspection, precise bearing/seal replacement, and verification of all internal clearances** for optimal performance.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-project-diagram"></i>
+                <strong>Formula SAE Component Design</strong>
+                <p>Developing detailed CAD models and performing design studies for specific mechanical components of UTA's high-performance Formula SAE race car, focusing on **weight reduction, durability, and reliability**.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-award"></i>
+                <strong>Certifications & Memberships</strong>
+                <ul>
+                    <li>**Formula SAE UTA Racing Team:** Assistant Engineer</li>
+                    <li>Member, AIAA (American Institute of Aeronautics and Astronautics)</li>
+                    <li>UL Research Institutes: Science of Fire & Explosion Hazards from Lithium-Ion Batteries</li>
+                    <li>Based Workforce Competency Credential</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h3>Experience & Education</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Formula SAE UTA Racing Team — Assistant Engineer</h4>
+                <p><em>Arlington, TX | 2025 – Present</em></p>
+                <ul>
+                    <li>**Design and modify engine components** for improved performance and maintenance ease.</li>
+                    <li>Develop CAD models and conduct engineering design studies.</li>
+                    <li>Collaborate on testing and mechanical analysis of vehicle systems.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h4>Outback Steakhouse — Server Assistant</h4>
+                <p><em>Frisco, TX | **2021 – 2024**</em></p>
+                <ul>
+                    <li>Coordinated high-volume table service in a fast-paced environment.</li>
+                    <li>Developed strong **communication, teamwork, and time-management skills** critical for project deadlines.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h4>Education</h4>
+                <p><strong>University of Texas at Arlington</strong> — Bachelor of Science in Mechanical Engineering, <em>In Progress</em></p>
+                <p><strong>Frisco Centennial High School</strong> — High School Diploma</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3>Contact</h3>
+        <p>I am actively seeking internships and collaboration opportunities in the automotive or aerospace sectors. Please reach out if you have a project or position that aligns with my skills.</p>
+        <form action="https://formspree.io/f/mldoajyq" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Ryan Duntley 
+</footer>
+
+</body>
+</html>
