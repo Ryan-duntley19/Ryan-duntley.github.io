@@ -39,6 +39,7 @@ img {max-width:100%; display:block;}
     align-items:center;
     padding:2rem 1rem;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 #sidebar img {border-radius:50%; width:120px; margin-bottom:1rem; border: 3px solid var(--primary-accent);}
 #sidebar h1 {font-size:1.8rem; margin-bottom:0.3rem;}
@@ -67,8 +68,8 @@ img {max-width:100%; display:block;}
 
 #main {
     margin-left:250px; 
-    padding:2rem; 
-    max-width:900px;
+    padding:3rem 5rem; 
+    max-width:1200px;
     background: #fff;
     min-height: 100vh;
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
@@ -102,7 +103,7 @@ p {margin-bottom:1rem; color:#333;}
     padding: 2rem; 
     width: 100%;
     z-index:2;
-    background: rgba(0,0,0,0.7); /   
+    background: rgba(0,0,0,0.7);
 }
 
 
@@ -167,7 +168,15 @@ input:focus, textarea:focus {border-color:var(--primary-accent); outline:none;}
 button {padding:0.8rem; border:none; border-radius:5px; background:var(--primary-accent); color:#fff; cursor:pointer; transition:0.3s; font-weight: bold;}
 button:hover {background:#008c8c;}
 
-footer {text-align:center; padding:2rem 0; color:#777; font-size:0.8rem; margin-top: 2rem;}
+footer {
+    margin-left: 250px;
+    text-align:center; 
+    padding:2rem 0; 
+    color:#777; 
+    font-size:0.8rem; 
+    background: #fff;
+    border-top: 1px solid #eee;
+}
 
 @media(max-width:768px){
     #sidebar {position:relative; width:100%; height:auto; flex-direction:row; justify-content:space-between; flex-wrap:wrap; padding:1rem;}
@@ -348,7 +357,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
-
-
 
