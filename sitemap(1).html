@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Ryan Duntley Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            background: #eef1f5;
+            color: #222;
+            padding: 3rem 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1c1c1c;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            border-bottom: 3px solid #00bfa6;
+            padding-bottom: 0.75rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .sitemap-section {
+            margin-bottom: 2.5rem;
+        }
+        .sitemap-section h2 {
+            color: #1c1c1c;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #00bfa6;
+        }
+        ul {
+            list-style: none;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+        li::before {
+            content: "▸";
+            position: absolute;
+            left: -1.5rem;
+            color: #00bfa6;
+            font-weight: bold;
+        }
+        a {
+            color: #00bfa6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+        a:hover {
+            color: #008c7a;
+            text-decoration: underline;
+        }
+        .description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-left: 0;
+            margin-top: 0.25rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #00bfa6 0%, #008c7a 100%);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,191,166,0.3);
+        }
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,191,166,0.4);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Site Map</h1>
+        <p>Navigate through Ryan Duntley's portfolio website. All sections and pages are listed below for easy access.</p>
+        
+        <div class="sitemap-section">
+            <h2>Main Sections</h2>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                    <div class="description">Main landing page with hero section</div>
+                </li>
+                <li>
+                    <a href="index.html#about-me">About Me</a>
+                    <div class="description">Professional summary and background information</div>
+                </li>
+                <li>
+                    <a href="index.html#portfolio-intro">Portfolio</a>
+                    <div class="description">Engineering portfolio overview and external portfolio link</div>
+                </li>
+                <li>
+                    <a href="index.html#skills">Skills & Projects</a>
+                    <div class="description">Technical skills, certifications, and project highlights including B58 engine rebuild and Formula SAE work</div>
+                </li>
+                <li>
+                    <a href="index.html#experience">Experience & Education</a>
+                    <div class="description">Work history timeline and educational background</div>
+                </li>
+                <li>
+                    <a href="index.html#contact">Contact</a>
+                    <div class="description">Contact form and information for internship opportunities</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2>External Links</h2>
+            <ul>
+                <li>
+                    <a href="https://sites.google.com/view/engineering-portofiolo125846/home" target="_blank">Google Sites Portfolio</a>
+                    <div class="description">Complete engineering portfolio with PLTW projects</div>
+                </li>
+                <li>
+                    <a href="https://github.com/dhdvxvbb" target="_blank">GitHub</a>
+                    <div class="description">Code repositories and projects</div>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/ryanduntleyprofile" target="_blank">LinkedIn</a>
+                    <div class="description">Professional networking profile</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2>Key Projects Featured</h2>
+            <ul>
+                <li>
+                    <div><strong>Gen 1 B58 Engine Rebuild</strong></div>
+                    <div class="description">Complete disassembly and rebuild of BMW M240i engine</div>
+                </li>
+                <li>
+                    <div><strong>Formula SAE Component Design</strong></div>
+                    <div class="description">CAD modeling and design for UTA's Formula SAE race car</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2>Other Pages</h2>
+            <ul>
+                <li>
+                    <a href="sitemap.html">HTML Sitemap</a>
+                    <div class="description">This page - visual sitemap for navigation</div>
+                </li>
+                <li>
+                    <a href="sitemap.xml">XML Sitemap</a>
+                    <div class="description">Machine-readable sitemap for search engines</div>
+                </li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
