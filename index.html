@@ -7,15 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/   Reset and Global Styles   /
+  
    {margin:0; padding:0; box-sizing:border-box;}
 body {
     font-family:'Times New Roman', Times, serif; 
     line-height:1.6; 
-    background:#eef1f5; /   Lighter background   /
+    background:#eef1f5; 
     color:#222; 
     scroll-behavior: smooth;
-    font-weight: 500; /   General text is slightly bolder   /
+    font-weight: 500;
 }
 a {text-decoration:none; color:inherit;}
 img {max-width:100%; display:block;}
@@ -23,7 +23,7 @@ img {max-width:100%; display:block;}
 /   Color Palette   /
 :root {
     --primary-dark: #1c1c1c;
-    --primary-accent: #00a8a8; /   Teal/Cyan   /
+    --primary-accent: #00a8a8; 
     --light-gray: #f9f9f9;
 }
 
@@ -77,7 +77,7 @@ img {max-width:100%; display:block;}
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 section {margin-bottom:3.5rem;}
-h2,h3,h4 {margin-bottom:1rem; color:#111; border-bottom: 2px solid var(--primary-accent); padding-bottom: 0.5rem; font-weight: 700;} /   Bold headings   /
+h2,h3,h4 {margin-bottom:1rem; color:#111; border-bottom: 2px solid var(--primary-accent); padding-bottom: 0.5rem; font-weight: 700;}
 p {margin-bottom:1rem; color:#333;}
 
 /   Hero   /
@@ -95,7 +95,7 @@ p {margin-bottom:1rem; color:#333;}
     top:0; left:0;
     width:100%;
     height:100%;
-    background: rgba(0,0,0,0.5); /   Less dark overlay   /
+    background: rgba(0,0,0,0.5); 
     z-index:1;
 }
 .hero-text {
@@ -106,10 +106,10 @@ p {margin-bottom:1rem; color:#333;}
     padding: 2rem; /   Larger padding   /
     width: 100%;
     z-index:2;
-    background: rgba(0,0,0,0.7); /   Dark semi-transparent band for text readability   /
+    background: rgba(0,0,0,0.7); /   
 }
 
-/   Fix text readability issues   /
+
 .hero-text h2, .hero-text p {
     color: #fff !important; 
     border-bottom: none;
@@ -118,7 +118,7 @@ p {margin-bottom:1rem; color:#333;}
 .hero-text h2 {font-size:2.2rem; margin-bottom:0.5rem;}
 .hero-text p {font-size:1.1rem; margin-bottom: 0;}
 
-/   Feature cards   /
+
 .cards {display:flex; flex-wrap:wrap; gap:1.5rem;}
 .card {
     background:var(--light-gray); 
@@ -133,7 +133,7 @@ p {margin-bottom:1rem; color:#333;}
 .card i {font-size:1.8rem; color:var(--primary-accent); margin-bottom:0.5rem; display:block;}
 .card strong {color: var(--primary-dark); font-weight: 700;} /   Bold card titles   /
 
-/   Project Card List styling   /
+
 .card ul {list-style: none; padding-left: 0;}
 .card ul li {font-size: 0.9rem; margin-bottom: 0.3rem; position: relative; padding-left: 15px;}
 .card ul li::before {
@@ -147,7 +147,7 @@ p {margin-bottom:1rem; color:#333;}
     left: 0;
 }
 
-/   Timeline   /
+
 .timeline {border-left:3px solid var(--primary-accent); margin-left:1rem; padding-left:1.5rem;}
 .timeline-item {margin-bottom:2rem; position: relative;}
 .timeline-item::before {
@@ -165,17 +165,14 @@ p {margin-bottom:1rem; color:#333;}
 .timeline-item ul {list-style: disc; margin-left: 1.5rem; color:#555;}
 .timeline-item ul li {font-size: 0.9rem;}
 
-/   Contact form   /
 form {display:flex; flex-direction:column; gap:1rem; background: var(--light-gray); padding: 2rem; border-radius: 8px;}
 input, textarea {padding:0.8rem; border-radius:5px; border:1px solid #ccc; width:100%;}
 input:focus, textarea:focus {border-color:var(--primary-accent); outline:none;}
 button {padding:0.8rem; border:none; border-radius:5px; background:var(--primary-accent); color:#fff; cursor:pointer; transition:0.3s; font-weight: bold;}
 button:hover {background:#008c8c;}
 
-/   Footer   /
 footer {text-align:center; padding:2rem 0; color:#777; font-size:0.8rem; margin-top: 2rem;}
 
-/   Responsive   /
 @media(max-width:768px){
     #sidebar {position:relative; width:100%; height:auto; flex-direction:row; justify-content:space-between; flex-wrap:wrap; padding:1rem;}
     #sidebar nav ul {display:flex; gap:1rem; flex-wrap: wrap; justify-content: center;}
@@ -188,7 +185,6 @@ footer {text-align:center; padding:2rem 0; color:#777; font-size:0.8rem; margin-
     .hero-text h2 {font-size: 1.8rem;}
 }
 
-/   Active section highlighting   /
 nav ul li a.active {background:#333; color:var(--primary-accent);}
 </style>
 <script>
@@ -356,4 +352,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
 
